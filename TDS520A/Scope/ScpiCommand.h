@@ -21,9 +21,18 @@ namespace Scpi
     inline std::string DataSourceQuery()   { return "DATA:SOURCE?"; }
     inline std::string DataEncdg()         { return "DATA:ENCDG RIBinary"; } // Signed binary
     inline std::string DataWidth(int w)    { return "DATA:WIDTH " + std::to_string(w); } // 1 or 2 bytes
-    inline std::string DataStartStop()     { return "DATA:START 1;DATA:STOP 10000"; }
+    inline std::string DataStartStop(int nrPt = 500) // clamp to actual record length
+    {
+        char buf[64];
+        sprintf_s(buf, "DATA:START 1;DATA:STOP %d", nrPt > 0 ? nrPt : 500);
+        return buf;
+    }
     inline std::string WfmPre()            { return "WFMPRE?"; }
     inline std::string Curve()             { return "CURVE?"; }
+    // WAVFRM? returns preamble + binary data in a single transfer.
+    // Format: <preamble_ascii>%<binary_block>
+    // This saves one full GPIB round-trip per acquisition cycle.
+    inline std::string WavFrm()            { return "WAVFRM?"; }
 
     // Channel settings
     inline std::string ChScale(ScopeChannel ch, double v)

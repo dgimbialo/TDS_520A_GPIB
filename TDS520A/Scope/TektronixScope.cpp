@@ -146,6 +146,7 @@ bool TektronixScope::SetChannel(ScopeChannel ch, GpibError& err)
 
     if (!dev->Write(Scpi::DataSource(ch), err)) return false;
     m_channel = ch;
+    InvalidatePreambleCache();
     LOG_INF("Scope", L"Active channel: %S", ChannelName(ch));
     return true;
 }
@@ -166,25 +167,32 @@ bool TektronixScope::FetchWaveform(WaveformBuffer& outBuf, GpibError& err)
         return false;
     }
 
-    // 2. Request preamble
-    std::string preambleStr;
-    if (!dev->Query(Scpi::WfmPre(), preambleStr, err))
+    // 2. Request preamble — skipped when cache is valid (settings unchanged).
+    //    Invalidated automatically by SetChannel / SetHorizontalScale / SetChannelScale.
+    if (!m_preambleValid)
     {
-        LOG_ERR("Scope", L"WFMPRE? failed");
-        GpibError restartErr;
-        dev->Write(Scpi::AcqState(true), restartErr);
-        return false;
+        std::string preambleStr;
+        if (!dev->Query(Scpi::WfmPre(), preambleStr, err))
+        {
+            LOG_ERR("Scope", L"WFMPRE? failed");
+            GpibError restartErr;
+            dev->Write(Scpi::AcqState(true), restartErr);
+            return false;
+        }
+        if (!m_preambleCache.Parse(preambleStr))
+        {
+            err.message = L"Failed to parse waveform preamble";
+            LOG_ERR("Scope", L"Preamble parse failed: %S", preambleStr.c_str());
+            GpibError restartErr;
+            dev->Write(Scpi::AcqState(true), restartErr);
+            return false;
+        }
+        m_preambleValid = true;
+        LOG_DBG("Scope", L"Preamble refreshed from scope");
     }
 
-    // 3. Parse preamble
-    if (!outBuf.Preamble.Parse(preambleStr))
-    {
-        err.message = L"Failed to parse waveform preamble";
-        LOG_ERR("Scope", L"Preamble parse failed: %S", preambleStr.c_str());
-        GpibError restartErr;
-        dev->Write(Scpi::AcqState(true), restartErr);
-        return false;
-    }
+    // 3. Copy cached preamble into output buffer
+    outBuf.Preamble = m_preambleCache;
 
     // 4. Request and read curve data (scope is already stopped)
     if (!dev->Write(Scpi::Curve(), err))
@@ -282,7 +290,9 @@ bool TektronixScope::SetHorizontalScale(double secPerDiv, GpibError& err)
     std::lock_guard<std::mutex> lock(m_mutex);
     auto* dev = m_controller.GetDevice();
     if (!dev) { err.message = L"Not connected"; return false; }
-    return dev->Write(Scpi::HorScale(secPerDiv), err);
+    bool ok = dev->Write(Scpi::HorScale(secPerDiv), err);
+    if (ok) InvalidatePreambleCache();
+    return ok;
 }
 
 bool TektronixScope::SetChannelScale(ScopeChannel ch, double voltsPerDiv, GpibError& err)
@@ -290,7 +300,9 @@ bool TektronixScope::SetChannelScale(ScopeChannel ch, double voltsPerDiv, GpibEr
     std::lock_guard<std::mutex> lock(m_mutex);
     auto* dev = m_controller.GetDevice();
     if (!dev) { err.message = L"Not connected"; return false; }
-    return dev->Write(Scpi::ChScale(ch, voltsPerDiv), err);
+    bool ok = dev->Write(Scpi::ChScale(ch, voltsPerDiv), err);
+    if (ok) InvalidatePreambleCache();
+    return ok;
 }
 
 bool TektronixScope::AdjustTriggerLevel(double deltaVolts, GpibError& err)

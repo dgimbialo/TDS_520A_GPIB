@@ -63,8 +63,13 @@ public:
     // Raw read into pre-allocated buffer; returns bytes read
     int  Read(char* buf, int bufSize, GpibError& err);
 
-    // Write then read (query)
+    // Write then read (query) — ASCII responses only (stops at first NUL)
     bool Query(const std::string& cmd, std::string& response, GpibError& err);
+
+    // Write then read into a raw byte buffer — safe for mixed ASCII+binary
+    // responses such as WAVFRM? (preamble % #Nxxxxx<binary>).
+    bool QueryRaw(const std::string& cmd, std::vector<uint8_t>& response,
+                  GpibError& err);
 
     // Binary block read (for CURVE? data)
     bool ReadBinaryBlock(std::vector<uint8_t>& data, GpibError& err);

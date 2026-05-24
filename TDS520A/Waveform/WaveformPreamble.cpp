@@ -155,3 +155,61 @@ bool WaveformPreamble::Parse(const std::string& response)
         nrPt, xIncr, yMult, yOff, yZero);
     return true;
 }
+
+// ---------------------------------------------------------------------------
+// WAVFRM? parser
+// TDS 520A WAVFRM? response format:
+//   <preamble fields same as WFMPRE?>%<IEEE 488.2 binary block>
+// The '%' character is the separator between ASCII preamble and binary data.
+// ---------------------------------------------------------------------------
+bool WaveformPreamble::ParseWavfrm(const std::string& response,
+                                   std::vector<uint8_t>& rawDataOut)
+{
+    // Find the '%' separator
+    auto sep = response.find('%');
+    if (sep == std::string::npos)
+    {
+        LOG_ERR("WfmPre", L"WAVFRM? response has no '%%' separator");
+        return false;
+    }
+
+    // Parse the preamble part (everything before '%')
+    if (!Parse(response.substr(0, sep)))
+        return false;
+
+    // Parse the binary block part (everything after '%')
+    // Format: #<N><N_digits_of_length><data_bytes>
+    const char* p   = response.c_str() + sep + 1;
+    size_t      rem = response.size() - sep - 1;
+
+    if (rem < 2 || p[0] != '#')
+    {
+        LOG_ERR("WfmPre", L"WAVFRM? binary block does not start with '#'");
+        return false;
+    }
+
+    int nDigits = p[1] - '0';
+    if (nDigits <= 0 || nDigits > 9 || rem < static_cast<size_t>(2 + nDigits))
+    {
+        LOG_ERR("WfmPre", L"WAVFRM? binary block: bad digit count %d", nDigits);
+        return false;
+    }
+
+    char lenBuf[11]{};
+    std::memcpy(lenBuf, p + 2, static_cast<size_t>(nDigits));
+    lenBuf[nDigits] = '\0';
+    long dataLen = std::atol(lenBuf);
+
+    if (dataLen <= 0 || static_cast<size_t>(2 + nDigits + dataLen) > rem)
+    {
+        LOG_ERR("WfmPre", L"WAVFRM? binary block: dataLen=%ld out of range", dataLen);
+        return false;
+    }
+
+    const uint8_t* dataStart =
+        reinterpret_cast<const uint8_t*>(p + 2 + nDigits);
+    rawDataOut.assign(dataStart, dataStart + dataLen);
+
+    LOG_DBG("WfmPre", L"WAVFRM? parsed: preamble OK + %ld bytes", dataLen);
+    return true;
+}

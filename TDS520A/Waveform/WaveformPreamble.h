@@ -28,6 +28,12 @@ struct WaveformPreamble
     // Parse the ASCII WFMPRE? response string
     bool Parse(const std::string& response);
 
+    // Parse WAVFRM? response: "<preamble_ascii>%<#NNN...binary_block>"
+    // Splits on '%', parses the preamble part, and copies the binary data
+    // into rawDataOut.  Returns false if the format is not recognised.
+    bool ParseWavfrm(const std::string& response,
+                     std::vector<uint8_t>& rawDataOut);
+
     // Convert raw ADC value to voltage
     inline double ToVoltage(int rawAdc) const
     {

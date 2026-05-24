@@ -129,4 +129,10 @@ private:
     // Stored as integer (scaled by 1e9) to allow std::atomic.
     std::atomic<int64_t> m_cachedSecPerDiv  { 0 };
     std::atomic<int64_t> m_cachedVoltsPerDiv{ 0 };
+
+    // Preamble cache: WFMPRE? is only re-fetched when settings change.
+    // Invalidated by SetChannel / SetHorizontalScale / SetChannelScale.
+    WaveformPreamble   m_preambleCache;
+    bool               m_preambleValid{ false };
+    void               InvalidatePreambleCache() { m_preambleValid = false; }
 };

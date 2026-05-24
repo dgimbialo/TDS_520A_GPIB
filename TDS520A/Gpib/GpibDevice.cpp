@@ -98,6 +98,26 @@ bool GpibDevice::Query(const std::string& cmd, std::string& response, GpibError&
     return true;
 }
 
+bool GpibDevice::QueryRaw(const std::string& cmd, std::vector<uint8_t>& response,
+                           GpibError& err)
+{
+    if (!Write(cmd, err)) return false;
+
+    // WAVFRM? for 500 points: ~200 bytes preamble + 1 byte '%' + ~7 bytes
+    // block header + 500 bytes data = ~710 bytes.  Allocate generously.
+    constexpr int kBufSize = 131072;  // 128 KB
+    response.resize(static_cast<size_t>(kBufSize));
+    ::ibrd(m_ud, response.data(), static_cast<long>(kBufSize));
+    if (ibsta & ERR)
+    {
+        FillError(err, L"ibrd QueryRaw");
+        response.clear();
+        return false;
+    }
+    response.resize(static_cast<size_t>(ibcntl));
+    return true;
+}
+
 bool GpibDevice::ReadBinaryBlock(std::vector<uint8_t>& data, GpibError& err)
 {
     if (m_ud < 0) { err.message = L"Device not open"; return false; }
