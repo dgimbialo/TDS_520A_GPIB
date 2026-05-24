@@ -92,15 +92,15 @@ Output: `TDS520A\bin\Debug\TDS520A.exe`
 
 ```
 CTds520AApp
-  ??? TektronixScope        GPIB driver (connect, SetChannel, FetchWaveform)
-  ??? AcquisitionThread     Sole GPIB owner — drains command queue, fetches waveforms
-  ?     ??? WaveformDecoder ADC bytes ? voltage/time samples
-  ??? WaveformRingBuffer    Lock-free waveform queue
-  ??? HttpServer            Embedded HTTP + WebSocket server (port 8080)
-  ?     ??? HtmlGenerator   Inline HTML/JS oscilloscope page
-  ??? MFC UI
-        ??? OscilloscopeView  GDI double-buffered waveform renderer
-        ??? ScopeControlPanel Settings, stats, QR code
+  +-- TektronixScope        GPIB driver (connect, SetChannel, FetchWaveform)
+  +-- AcquisitionThread     Sole GPIB owner — drains command queue, fetches waveforms
+  |     +-- WaveformDecoder ADC bytes -> voltage/time samples
+  +-- WaveformRingBuffer    Lock-free waveform queue
+  +-- HttpServer            Embedded HTTP + WebSocket server (port 8080)
+  |     +-- HtmlGenerator   Inline HTML/JS oscilloscope page
+  +-- MFC UI
+        +-- OscilloscopeView  GDI double-buffered waveform renderer
+        +-- ScopeControlPanel Settings, stats, QR code
 ```
 
 ### GPIB Thread Safety
