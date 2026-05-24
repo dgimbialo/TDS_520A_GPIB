@@ -29,9 +29,14 @@ struct GpibDeviceInfo
     int    primaryAddr{ 1 };   // Primary GPIB address (1-30)
     int    secondaryAddr{ 0 }; // Secondary address (0 = none)
     int    sendEOI{ 1 };       // Assert EOI with last byte
-    int    eotMode{ 0 };       // End-of-string mode
-    int    eosByte{ 0x0A };    // EOS byte (LF)
-    int    timeoutCode{ T10s }; // NI-488.2 timeout constant (T10s = 11)
+    // eotMode / eosByte:
+    //   NI-488.2 ibdev() eosmode bits: bit0=match-on-receive, bit2=send-EOS-on-write.
+    //   We ONLY want bit2 (send LF with writes) and NO receive-match, because
+    //   binary waveform data can contain 0x0A bytes and the driver would
+    //   prematurely end ibrd if receive-EOS is enabled.
+    int    eotMode{ 0x04 };    // bit2=send LF with writes; bit0 NOT set = no EOS on receive
+    int    eosByte{ 0x0A };    // LF appended to writes
+    int    timeoutCode{ T1s };  // NI-488.2 timeout constant (T1s=10, T3s=9, T10s=11)
 };
 
 // Error info returned by GPIB operations
@@ -94,4 +99,5 @@ private:
 
     int            m_ud{ -1 };   // NI-488.2 device unit descriptor
     GpibDeviceInfo m_info;
+    std::vector<uint8_t> m_readBuf; // reused across ReadBinaryBlock calls
 };

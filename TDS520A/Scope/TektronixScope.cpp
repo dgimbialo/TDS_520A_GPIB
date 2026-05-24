@@ -19,7 +19,7 @@ bool TektronixScope::AutoConnect(int gpibBoard, GpibError& err)
     GpibDeviceInfo info;
     info.boardIndex  = gpibBoard;
     info.primaryAddr = addr;
-    info.timeoutCode = T10s;
+    info.timeoutCode = T3s;  // 3 s is plenty for any TDS 520A response
     return Connect(info, err);
 }
 

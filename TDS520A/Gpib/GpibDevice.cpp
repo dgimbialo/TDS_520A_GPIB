@@ -122,60 +122,55 @@ bool GpibDevice::ReadBinaryBlock(std::vector<uint8_t>& data, GpibError& err)
 {
     if (m_ud < 0) { err.message = L"Device not open"; return false; }
 
-    // Tektronix IEEE 488.2 block format: #<N><N digits of length><data>
-    // First read the header to determine block size
-    char header[16]{};
-    ::ibrd(m_ud, header, 2);  // Read '#' + digit count character
-    if (ibsta & ERR) { FillError(err, L"ibrd header"); return false; }
+    // --- Single-ibrd fast path ---
+    // Read the entire CURVE? response in one USB/GPIB transaction.
+    // For 250 pts @1 byte: response = "#" + "3" + "250" + 250 bytes + optional LF
+    //                                  = 1+1+3+250+1 = 256 bytes max.
+    // Over-allocate to handle any record length up to 15000 pts (TDS 520A max).
+    // Re-using m_readBuf avoids per-call heap allocation.
+    constexpr long kMaxResponse = 16384;
+    m_readBuf.resize(static_cast<size_t>(kMaxResponse));
 
-    if (header[0] != '#')
+    ::ibrd(m_ud, m_readBuf.data(), kMaxResponse);
+    if (ibsta & ERR)
+    {
+        FillError(err, L"ibrd ReadBinaryBlock");
+        return false;
+    }
+    long total = ibcntl;
+
+    // Parse IEEE 488.2 block header from the received bytes
+    const uint8_t* p = m_readBuf.data();
+    if (total < 2 || p[0] != '#')
     {
         err.message = L"Binary block does not start with '#'";
-        LOG_ERR("GPIB", L"Binary block header invalid: 0x%02X", (unsigned char)header[0]);
+        LOG_ERR("GPIB", L"Binary block header[0]=0x%02X total=%ld", p[0], total);
         return false;
     }
 
-    int nDigits = header[1] - '0';
-    if (nDigits <= 0 || nDigits > 9)
+    int nDigits = p[1] - '0';
+    if (nDigits <= 0 || nDigits > 9 || total < 2 + nDigits)
     {
         err.message = L"Invalid binary block digit count";
         return false;
     }
 
-    char lenBuf[10]{};
-    ::ibrd(m_ud, lenBuf, static_cast<long>(nDigits));
-    if (ibsta & ERR) { FillError(err, L"ibrd block length"); return false; }
-    lenBuf[nDigits] = '\0';
-
-    long dataLen = 0;
-    if (sscanf_s(lenBuf, "%ld", &dataLen) != 1 || dataLen <= 0)
+    char lenBuf[11]{};
+    std::memcpy(lenBuf, p + 2, static_cast<size_t>(nDigits));
+    long dataLen = std::atol(lenBuf);
+    if (dataLen <= 0)
     {
-        err.message = L"Could not parse binary block data length";
+        err.message = L"Binary block data length is zero";
         return false;
     }
 
-    data.resize(static_cast<size_t>(dataLen));
-    ::ibrd(m_ud, data.data(), dataLen);
-    if (ibsta & ERR)
-    {
-        FillError(err, L"ibrd block data");
-        data.clear();
-        return false;
-    }
+    const uint8_t* dataStart = p + 2 + nDigits;
+    long available = total - 2 - nDigits;
+    long toCopy = (available >= dataLen) ? dataLen : available;
 
-    // Read trailing newline ONLY if EOI has not already been asserted.
-    // On TDS 520A, EOI is asserted with the last data byte, not the trailing LF.
-    // If END (EOI received) is set after the data read, the transfer is complete —
-    // attempting another ibrd would block for the full GPIB timeout (T10s) and
-    // leave m_ud in an EABO error state, breaking the next operation.
-    if (!(ibsta & END))
-    {
-        char trail[2]{};
-        ::ibrd(m_ud, trail, 1);
-        // Ignore errors: the trailing byte is optional housekeeping.
-    }
+    data.assign(dataStart, dataStart + toCopy);
 
-    LOG_DBG("GPIB", L"Binary block read: %ld bytes", dataLen);
+    LOG_DBG("GPIB", L"Binary block read: %ld bytes (1 ibrd, total=%ld)", toCopy, total);
     return true;
 }
 
