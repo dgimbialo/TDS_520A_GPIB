@@ -38,7 +38,24 @@ struct ViewTransform
         return yCenter + (screenH * 0.5 - py) / yScale;
     }
 
-    // Fit waveform to screen
+    // Fit view to oscilloscope divisions — mirrors what the scope shows on screen.
+    // tCenter: time at horizontal centre (= trigger offset from record midpoint).
+    // xScale: screenW pixels must span hDivisions * secPerDiv seconds.
+    // yScale: screenH pixels must span vDivisions * voltsPerDiv volts.
+    void SetFromScope(double tCenter, double secPerDiv, double voltsPerDiv,
+                      int hDiv, int vDiv, int w, int h)
+    {
+        screenW = w;
+        screenH = h;
+        xCenter = tCenter;   // time at screen centre (trigger point)
+        yCenter = 0.0;       // 0V at screen centre (scope convention)
+        double tSpan = secPerDiv  * hDiv;
+        double vSpan = voltsPerDiv * vDiv;
+        if (tSpan > 0) xScale = static_cast<double>(w) / tSpan;
+        if (vSpan > 0) yScale = static_cast<double>(h) / vSpan;
+    }
+
+    // Legacy — kept for reference but no longer called in render path
     void FitToWaveform(double tMin, double tMax, double vMin, double vMax, int w, int h)
     {
         screenW = w;

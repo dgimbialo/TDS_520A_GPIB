@@ -141,6 +141,7 @@ bool CTds520AApp::ConnectScope()
         return false;
     }
     m_httpServer.SetCachedIdn(StringUtils::WideToUtf8(m_scope.GetIdn()));
+    SyncSettingsFromScope();
     return true;
 }
 
@@ -159,7 +160,37 @@ bool CTds520AApp::ConnectScope(int board, int addr)
         return false;
     }
     m_httpServer.SetCachedIdn(StringUtils::WideToUtf8(m_scope.GetIdn()));
+    SyncSettingsFromScope();
     return true;
+}
+
+void CTds520AApp::SyncSettingsFromScope()
+{
+    // Called from the connect background thread — GPIB is free here.
+    // Read the scope's current horizontal and vertical settings so the
+    // control panel and renderer show correct values from the first frame.
+    GpibError err;
+
+    double secPerDiv   = 0.0;
+    double voltsPerDiv = 0.0;
+    ScopeChannel ch = m_scope.GetChannel();
+
+    bool gotH = m_scope.QueryHorizontalScale(secPerDiv, err) && secPerDiv > 0.0;
+    bool gotV = m_scope.QueryChannelScale(ch, voltsPerDiv, err) && voltsPerDiv > 0.0;
+
+    if (gotH || gotV)
+    {
+        TektronixScope::DisplayParams cur = m_scope.GetCachedDisplayParams();
+        m_scope.SetCachedDisplayParams(
+            gotH ? secPerDiv   : cur.secPerDiv,
+            gotV ? voltsPerDiv : cur.voltsPerDiv);
+        LOG_INF("App", L"Synced from scope: secPerDiv=%.3g voltsPerDiv=%.3g",
+                gotH ? secPerDiv : cur.secPerDiv,
+                gotV ? voltsPerDiv : cur.voltsPerDiv);
+    }
+
+    // Force preamble re-read on first fetch so NR_PT / XINCR are refreshed
+    m_scope.InvalidatePreambleCache();
 }
 
 void CTds520AApp::DisconnectScope()

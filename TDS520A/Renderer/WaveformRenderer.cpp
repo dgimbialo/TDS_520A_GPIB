@@ -65,10 +65,14 @@ void WaveformRenderer::Render(HDC hdc, const DecodedWaveform& wave, RenderContex
 
     if (!wave.Samples.empty())
     {
-        ctx.View.FitToWaveform(wave.XMin, wave.XMax, wave.YMin, wave.YMax,
-                                pa.w, pa.h);
+        // Use scope divisions so the display matches the oscilloscope screen exactly.
+        // xCenter = midpoint of the record = trigger position on the time axis.
         ctx.secPerDiv   = wave.SecPerDiv;
         ctx.voltsPerDiv = wave.VoltsPerDiv;
+        double tCenter  = (wave.XMin + wave.XMax) * 0.5;
+        ctx.View.SetFromScope(tCenter, wave.SecPerDiv, wave.VoltsPerDiv,
+                               ctx.hDivisions, ctx.vDivisions,
+                               pa.w, pa.h);
     }
 
     DrawBackground(m_offDC, ctx);

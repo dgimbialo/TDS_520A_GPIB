@@ -10,7 +10,10 @@ class ScopeControlPanel : public CDialog
 {
 public:
     explicit ScopeControlPanel(CWnd* pParent = nullptr);
-    ~ScopeControlPanel() override = default;
+    ~ScopeControlPanel() override
+    {
+        if (m_hQrBmp) { ::DeleteObject(m_hQrBmp); m_hQrBmp = nullptr; }
+    }
 
     enum { IDD = IDD_SCOPE_CONTROLS };
 
@@ -47,6 +50,7 @@ protected:
     afx_msg void OnBtnTrigLvlDn();
     afx_msg void OnBtnCursorToggle();
     afx_msg void OnChannelSelChange();
+    afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDIS);
 
     DECLARE_MESSAGE_MAP()
 
@@ -58,8 +62,15 @@ private:
     // Compute frequency from waveform zero-crossings
     static double EstimateFrequency(const DecodedWaveform& w);
 
+    // Draw the QR code for the web URL into the owner-draw static control
+    void DrawQrCode(LPDRAWITEMSTRUCT lpDIS);
+
     bool m_cursorEnabled{ false };
 
     // Combo
     CComboBox m_comboChannel;
+
+    // QR bitmap cache — generated once on init, redrawn on WM_DRAWITEM
+    HBITMAP   m_hQrBmp{ nullptr };
+    int       m_qrBmpSize{ 0 };  // pixel side length of m_hQrBmp
 };

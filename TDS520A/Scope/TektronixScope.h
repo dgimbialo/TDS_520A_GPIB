@@ -109,6 +109,14 @@ public:
         p.voltsPerDiv = AtomicLoadDouble(m_cachedVoltsPerDiv);
         return p;
     }
+    // Seed cached display params immediately after connect (called from App).
+    void SetCachedDisplayParams(double secPerDiv, double voltsPerDiv)
+    {
+        AtomicStoreDouble(m_cachedSecPerDiv,   secPerDiv);
+        AtomicStoreDouble(m_cachedVoltsPerDiv, voltsPerDiv);
+    }
+    // Force preamble re-read on next FetchWaveform (call after changing settings).
+    void InvalidatePreambleCache() { m_preambleValid = false; }
 
 private:
     bool SetupDataEncoding(GpibError& err);
@@ -134,5 +142,4 @@ private:
     // Invalidated by SetChannel / SetHorizontalScale / SetChannelScale.
     WaveformPreamble   m_preambleCache;
     bool               m_preambleValid{ false };
-    void               InvalidatePreambleCache() { m_preambleValid = false; }
 };

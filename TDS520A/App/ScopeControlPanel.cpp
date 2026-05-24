@@ -3,6 +3,11 @@
 #include "ScopeControlPanel.h"
 #include "TDS520AApp.h"
 #include "Logger.h"
+#include "NetworkUtils.h"
+#pragma warning(push)
+#pragma warning(disable: 4244 4267)
+#include "../Utils/qrcodegen.hpp"
+#pragma warning(pop)
 
 BEGIN_MESSAGE_MAP(ScopeControlPanel, CDialog)
     ON_BN_CLICKED(IDC_BTN_RUN,           OnBtnRun)
@@ -19,6 +24,7 @@ BEGIN_MESSAGE_MAP(ScopeControlPanel, CDialog)
     ON_BN_CLICKED(IDC_BTN_TRIGLVL_DN,    OnBtnTrigLvlDn)
     ON_BN_CLICKED(IDC_BTN_CURSOR_TOGGLE, OnBtnCursorToggle)
     ON_CBN_SELCHANGE(IDC_COMBO_CHANNEL,  OnChannelSelChange)
+    ON_WM_DRAWITEM()
 END_MESSAGE_MAP()
 
 ScopeControlPanel::ScopeControlPanel(CWnd* pParent)
@@ -42,23 +48,115 @@ BOOL ScopeControlPanel::OnInitDialog()
     m_comboChannel.AddString(L"CH4");
     m_comboChannel.SetCurSel(0);
 
+    // Build the web URL and show it in the label
+    std::string ip   = NetworkUtils::GetPrimaryLocalIP();
+    std::string url  = "http://" + ip + ":8080";
+    CString     wurl = CString(url.c_str());
+    // IDC_STATIC_QR_URL is now a read-only EDITTEXT so the user can select/copy it
+    SetDlgItemText(IDC_STATIC_QR_URL, wurl);
+
+    // Generate QR code bitmap and cache it for OnDrawItem
+    // QR control rect in dialog units — get pixel size after layout
+    if (CWnd* pCtrl = GetDlgItem(IDC_STATIC_QR_IMAGE))
+    {
+        CRect rc;
+        pCtrl->GetClientRect(&rc);
+        int cellPx = rc.Width() > rc.Height() ? rc.Width() : rc.Height();
+        if (cellPx < 4) cellPx = 90; // fallback if layout not ready yet
+
+        using namespace qrcodegen;
+        QrCode qr = QrCode::encodeText(url.c_str(), QrCode::Ecc::MEDIUM);
+        int    sz = qr.getSize();           // modules per side
+        int    scale = (cellPx / sz) > 1 ? (cellPx / sz) : 1; // pixels per module
+        int    bmpSide = sz * scale;
+
+        HDC     hdc    = ::GetDC(m_hWnd);
+        HDC     memDC  = ::CreateCompatibleDC(hdc);
+        HBITMAP hBmp   = ::CreateCompatibleBitmap(hdc, bmpSide, bmpSide);
+        HBITMAP hOld   = static_cast<HBITMAP>(::SelectObject(memDC, hBmp));
+
+        // Fill white background
+        RECT all{ 0, 0, bmpSide, bmpSide };
+        HBRUSH wBrush = ::CreateSolidBrush(RGB(255,255,255));
+        HBRUSH bBrush = ::CreateSolidBrush(RGB(0,0,0));
+        ::FillRect(memDC, &all, wBrush);
+
+        for (int row = 0; row < sz; ++row)
+            for (int col = 0; col < sz; ++col)
+                if (qr.getModule(col, row))
+                {
+                    RECT cell{ col*scale, row*scale,
+                               col*scale + scale, row*scale + scale };
+                    ::FillRect(memDC, &cell, bBrush);
+                }
+
+        ::DeleteObject(wBrush);
+        ::DeleteObject(bBrush);
+        ::SelectObject(memDC, hOld);
+        ::DeleteDC(memDC);
+        ::ReleaseDC(m_hWnd, hdc);
+
+        if (m_hQrBmp) ::DeleteObject(m_hQrBmp);
+        m_hQrBmp    = hBmp;
+        m_qrBmpSize = bmpSide;
+    }
+
     return TRUE;
 }
+
+void ScopeControlPanel::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDIS)
+{
+    if (nIDCtl == IDC_STATIC_QR_IMAGE)
+    {
+        DrawQrCode(lpDIS);
+        return;
+    }
+    CDialog::OnDrawItem(nIDCtl, lpDIS);
+}
+
+void ScopeControlPanel::DrawQrCode(LPDRAWITEMSTRUCT lpDIS)
+{
+    HDC  hdc = lpDIS->hDC;
+    RECT rc  = lpDIS->rcItem;
+    int  w   = rc.right  - rc.left;
+    int  h   = rc.bottom - rc.top;
+
+    // White background
+    ::FillRect(hdc, &rc, static_cast<HBRUSH>(::GetStockObject(WHITE_BRUSH)));
+
+    if (!m_hQrBmp || m_qrBmpSize <= 0) return;
+
+    HDC    memDC = ::CreateCompatibleDC(hdc);
+    HBITMAP hOld = static_cast<HBITMAP>(::SelectObject(memDC, m_hQrBmp));
+
+    // Centre the QR bitmap inside the control rect
+    int drawW = w < m_qrBmpSize ? w : m_qrBmpSize;
+    int drawH = h < m_qrBmpSize ? h : m_qrBmpSize;
+    int offX  = (w - drawW) / 2;
+    int offY  = (h - drawH) / 2;
+
+    ::StretchBlt(hdc, rc.left + offX, rc.top + offY, drawW, drawH,
+                 memDC, 0, 0, m_qrBmpSize, m_qrBmpSize, SRCCOPY);
+
+    ::SelectObject(memDC, hOld);
+    ::DeleteDC(memDC);
+}
+
+
 
 // ---- Button handlers --------------------------------------------------------
 
 void ScopeControlPanel::OnBtnRun()
 {
-    auto* acq = theApp.GetAcqThread();
     if (!theApp.GetScope().IsConnected())
     {
         SetDlgItemText(IDC_STATIC_CONN_STATUS, L"Not connected");
         return;
     }
-    if (acq)
-        acq->RequestRun();
-    else
-        theApp.StartAcquisition(theApp.GetScope().GetChannel());
+    // Always restart via StartAcquisition — it handles both the case where
+    // the thread is already running and where it was stopped by the Stop button.
+    // RequestRun() alone is not enough when the thread has fully stopped.
+    theApp.StartAcquisition(theApp.GetScope().GetChannel());
 }
 
 void ScopeControlPanel::OnBtnStop()

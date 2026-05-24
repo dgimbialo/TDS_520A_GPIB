@@ -111,7 +111,7 @@ END
 /////////////////////////////////////////////////////////////////////////////
 // Scope Control Panel (child dialog, no title bar)
 
-IDD_SCOPE_CONTROLS DIALOGEX 0, 0, 225, 366
+IDD_SCOPE_CONTROLS DIALOGEX 0, 0, 225, 474
 STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
@@ -174,4 +174,12 @@ BEGIN
     GROUPBOX        "Cursors",            IDC_STATIC,              4,334, 217, 26
     PUSHBUTTON      "Cursor On/Off",      IDC_BTN_CURSOR_TOGGLE,  10,344, 100, 12
     LTEXT           "---",                IDC_STATIC_CURSOR_DV,  116,346,  99, 10
+
+    // ---- Web UI QR code ----
+    GROUPBOX        "Web interface",      IDC_STATIC,              4,366, 217,102
+    LTEXT           "Scan to open web UI:",IDC_STATIC_QR_HINT,    10,376, 205, 10
+    CONTROL         "",                   IDC_STATIC_QR_IMAGE, "STATIC", SS_OWNERDRAW,
+                                          10,388,  84,  70
+    EDITTEXT                              IDC_STATIC_QR_URL,     100,394, 115, 62,
+                    ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | WS_VSCROLL | NOT WS_BORDER
 END

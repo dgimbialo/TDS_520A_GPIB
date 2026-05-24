@@ -78,6 +78,9 @@
 #define IDC_BTN_ACQRATE_DN      324
 #define IDC_STATIC_ACQRATE_TGT  325
 #define IDC_EDIT_ACQRATE        326
+#define IDC_STATIC_QR_URL       327   // URL label below QR code
+#define IDC_STATIC_QR_HINT      328   // "Scan for web UI" hint text
+#define IDC_STATIC_QR_IMAGE     329   // owner-draw static for the QR bitmap
 
 // String table
 #define IDS_APP_TITLE           1

@@ -113,13 +113,24 @@ std::string MainPage(const std::string& localIp, uint16_t wsPort)
 
     if (!d.samples || d.samples.length < 2) return;
 
-    var n = d.samples.length;
-    var vMin = d.yMin, vMax = d.yMax;
-    var vSpan = vMax - vMin || 1;
-    var margin = 0.08;
+    var n          = d.samples.length;
+    var vpd        = d.voltsPerDiv || 0;
+    var spd        = d.secPerDiv   || 0;
 
+    // --- Scope-accurate coordinate mapping ---
+    // Vertical:   0V at screen centre, ±(GRID_V/2 * voltsPerDiv) at top/bottom
+    // Horizontal: samples span exactly GRID_H divisions (xMin..xMax)
     function toScreenY(v) {
-      return H * (1 - margin) - (v - vMin) / vSpan * H * (1 - 2*margin);
+      if (vpd > 0) {
+        // pixels per volt = H / (GRID_V * voltsPerDiv)
+        return H * 0.5 - v * (H / (GRID_V * vpd));
+      }
+      // fallback: fit to yMin..yMax
+      var vSpan = (d.yMax - d.yMin) || 1;
+      return H * 0.9 - (v - d.yMin) / vSpan * H * 0.8;
+    }
+    function toScreenX(i) {
+      return W * i / (n - 1);
     }
 
     // Waveform
@@ -127,14 +138,14 @@ std::string MainPage(const std::string& localIp, uint16_t wsPort)
     ctx.strokeStyle = '#00ff00';
     ctx.lineWidth = 1.5;
     for (var i = 0; i < n; i++) {
-      var x = W * i / (n - 1);
+      var x = toScreenX(i);
       var y = toScreenY(d.samples[i]);
       if (i === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
     ctx.stroke();
 
-    // Trigger line (y=0 or trigger level)
+    // Trigger line at 0V
     var trigY = toScreenY(0);
     ctx.beginPath();
     ctx.strokeStyle = '#ffff00';

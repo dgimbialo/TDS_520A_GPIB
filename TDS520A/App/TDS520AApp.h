@@ -30,6 +30,11 @@ public:
     virtual int  ExitInstance() override;
 
 private:
+    // Read HorScale + ChannelScale from the scope right after connect and
+    // store them in the scope's atomic cache so the first rendered frame
+    // already shows the correct V/div and s/div.
+    void SyncSettingsFromScope();
+
     TektronixScope             m_scope;
     WaveformRingBuffer         m_ringBuf;
     std::unique_ptr<AcquisitionThread> m_acqThread;
