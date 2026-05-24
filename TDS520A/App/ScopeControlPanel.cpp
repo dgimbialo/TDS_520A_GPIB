@@ -78,6 +78,26 @@ static const uint32_t kAcqRateSteps[] = { 1,2,5,10,20,50,100,200,0 };
 static constexpr int  kAcqRateStepCount = static_cast<int>(
     sizeof(kAcqRateSteps)/sizeof(kAcqRateSteps[0]));
 
+BOOL ScopeControlPanel::PreTranslateMessage(MSG* pMsg)
+{
+    // When Enter is pressed inside the acq-rate edit box, apply the value
+    // and move focus away (which also triggers KillFocus).
+    // Without this override, CDialog::PreTranslateMessage() routes VK_RETURN
+    // to the default button (IDOK) which calls EndDialog() and hides the panel.
+    if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
+    {
+        CWnd* focused = GetFocus();
+        if (focused && focused->GetDlgCtrlID() == IDC_EDIT_ACQRATE)
+        {
+            // Apply value then shift focus to the panel itself so KillFocus fires
+            OnAcqRateEditKillFocus();
+            GotoDlgCtrl(GetDlgItem(IDC_BTN_RUN));
+            return TRUE;  // message handled, do NOT pass to CDialog
+        }
+    }
+    return CDialog::PreTranslateMessage(pMsg);
+}
+
 void ScopeControlPanel::OnAcqRateEditKillFocus()
 {
     auto* acq = theApp.GetAcqThread();

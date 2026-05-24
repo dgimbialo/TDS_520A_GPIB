@@ -28,6 +28,10 @@ public:
 protected:
     void DoDataExchange(CDataExchange* pDX) override;
     BOOL OnInitDialog() override;
+    // Prevent CDialog default behaviour of closing on Enter / Escape
+    void OnOK()    override {}   // swallow Enter
+    void OnCancel() override {}  // swallow Escape
+    BOOL PreTranslateMessage(MSG* pMsg) override;
 
     afx_msg void OnBtnRun();
     afx_msg void OnBtnStop();
