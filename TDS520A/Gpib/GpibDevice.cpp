@@ -124,11 +124,11 @@ bool GpibDevice::ReadBinaryBlock(std::vector<uint8_t>& data, GpibError& err)
 
     // --- Single-ibrd fast path ---
     // Read the entire CURVE? response in one USB/GPIB transaction.
-    // For 250 pts @1 byte: response = "#" + "3" + "250" + 250 bytes + optional LF
-    //                                  = 1+1+3+250+1 = 256 bytes max.
-    // Over-allocate to handle any record length up to 15000 pts (TDS 520A max).
+    // For 250 pts @1 byte: response = "#" + "3" + "250" + 250 bytes = 256 bytes.
+    // 512 bytes covers up to ~500 points. NI USB driver transfers exactly
+    // as many bytes as ibrd requests over DMA — smaller buffer = faster USB transfer.
     // Re-using m_readBuf avoids per-call heap allocation.
-    constexpr long kMaxResponse = 16384;
+    constexpr long kMaxResponse = 512;
     m_readBuf.resize(static_cast<size_t>(kMaxResponse));
 
     ::ibrd(m_ud, m_readBuf.data(), kMaxResponse);
