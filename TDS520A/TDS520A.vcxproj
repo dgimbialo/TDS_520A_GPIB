@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <VcpkgAutoLink>false</VcpkgAutoLink>
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>TDS520A</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TDS520A</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\Debug\</OutDir>
+    <IntDir>$(SolutionDir)obj\Debug\$(ProjectName)\</IntDir>
+    <TargetName>TDS520A</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\Release\</OutDir>
+    <IntDir>$(SolutionDir)obj\Release\$(ProjectName)\</IntDir>
+    <TargetName>TDS520A</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <!-- ===== DEBUG ===== -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_UNICODE;UNICODE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)App;$(ProjectDir)Gpib;$(ProjectDir)Scope;$(ProjectDir)Waveform;$(ProjectDir)Renderer;$(ProjectDir)HttpServer;$(ProjectDir)Threads;$(ProjectDir)Utils;C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProgramFiles(x86))\National Instruments\Shared\ExternalCompilerSupport\C\lib64\msvc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>Qt6EntryPointd.lib;Qt6EntryPoint.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <!-- ===== RELEASE ===== -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_UNICODE;UNICODE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)App;$(ProjectDir)Gpib;$(ProjectDir)Scope;$(ProjectDir)Waveform;$(ProjectDir)Renderer;$(ProjectDir)HttpServer;$(ProjectDir)Threads;$(ProjectDir)Utils;C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProgramFiles(x86))\National Instruments\Shared\ExternalCompilerSupport\C\lib64\msvc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>Qt6EntryPointd.lib;Qt6EntryPoint.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!-- PCH -->
+    <ClCompile Include="App\ConnectDialog.cpp" />
+    <ClCompile Include="App\ScopeControlPanel.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <!-- App -->
+    <ClCompile Include="App\TDS520AApp.cpp" />
+    <ClCompile Include="App\MainFrm.cpp" />
+    <ClCompile Include="App\OscilloscopeView.cpp" />
+    <!-- Gpib -->
+    <ClCompile Include="Gpib\GpibController.cpp" />
+    <ClCompile Include="Gpib\GpibDevice.cpp" />
+    <!-- Scope -->
+    <ClCompile Include="Scope\TektronixScope.cpp" />
+    <ClCompile Include="Scope\ScpiCommand.cpp" />
+    <ClCompile Include="Threads\AcquisitionThread.cpp" />
+    <!-- Waveform -->
+    <ClCompile Include="Waveform\WaveformPreamble.cpp" />
+    <ClCompile Include="Waveform\WaveformBuffer.cpp" />
+    <ClCompile Include="Waveform\WaveformDecoder.cpp" />
+    <!-- Renderer -->
+    <ClCompile Include="Renderer\WaveformRenderer.cpp" />
+    <ClCompile Include="Renderer\RenderContext.cpp" />
+    <!-- HttpServer -->
+    <ClCompile Include="HttpServer\HttpServer.cpp" />
+    <ClCompile Include="HttpServer\WebSocketServer.cpp" />
+    <ClCompile Include="HttpServer\HttpRequestParser.cpp" />
+    <ClCompile Include="HttpServer\HtmlGenerator.cpp" />
+    <!-- Threads -->
+    <ClCompile Include="Threads\RingBuffer.cpp" />
+    <!-- Utils -->
+    <ClCompile Include="Utils\Logger.cpp" />
+    <ClCompile Include="Utils\StringUtils.cpp" />
+    <ClCompile Include="Utils\NetworkUtils.cpp" />
+    <!-- HttpServer crypto -->
+    <ClCompile Include="HttpServer\Sha1.cpp" />
+    <ClCompile Include="HttpServer\Base64.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- PCH -->
+    <ClInclude Include="App\ConnectDialog.h" />
+    <ClInclude Include="App\ScopeControlPanel.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
+    <!-- App -->
+    <ClInclude Include="App\TDS520AApp.h" />
+    <ClInclude Include="App\MainFrm.h" />
+    <ClInclude Include="App\OscilloscopeView.h" />
+    <!-- Gpib -->
+    <ClInclude Include="Gpib\GpibController.h" />
+    <ClInclude Include="Gpib\GpibDevice.h" />
+    <!-- Scope -->
+    <ClInclude Include="Scope\TektronixScope.h" />
+    <ClInclude Include="Scope\ScpiCommand.h" />
+    <ClInclude Include="Scope\ScopeChannel.h" />
+    <!-- Waveform -->
+    <ClInclude Include="Waveform\WaveformPreamble.h" />
+    <ClInclude Include="Waveform\WaveformBuffer.h" />
+    <ClInclude Include="Waveform\WaveformDecoder.h" />
+    <ClInclude Include="Waveform\WaveformSample.h" />
+    <!-- Renderer -->
+    <ClInclude Include="Renderer\WaveformRenderer.h" />
+    <ClInclude Include="Renderer\RenderContext.h" />
+    <!-- HttpServer -->
+    <ClInclude Include="HttpServer\HttpServer.h" />
+    <ClInclude Include="HttpServer\WebSocketServer.h" />
+    <ClInclude Include="HttpServer\HttpRequestParser.h" />
+    <ClInclude Include="HttpServer\HtmlGenerator.h" />
+    <ClInclude Include="HttpServer\Base64.h" />
+    <ClInclude Include="HttpServer\Sha1.h" />
+    <!-- Threads -->
+    <ClInclude Include="Threads\AcquisitionThread.h" />
+    <ClInclude Include="Threads\RingBuffer.h" />
+    <!-- Utils -->
+    <ClInclude Include="Utils\Logger.h" />
+    <ClInclude Include="Utils\StringUtils.h" />
+    <ClInclude Include="Utils\NetworkUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\TDS520A.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="$(ProjectDir)ni4882scrt.obj" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

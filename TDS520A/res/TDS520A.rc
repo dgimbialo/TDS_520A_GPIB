@@ -1,0 +1,177 @@
+﻿// TDS520A.rc - Application resources
+// This is a minimal RC file. Extend as needed.
+
+#include "resource.h"
+#include <winres.h>
+
+LANGUAGE LANG_ENGLISH, SUBLANG_DEFAULT
+
+/////////////////////////////////////////////////////////////////////////////
+// Menu
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&Scope"
+    BEGIN
+        MENUITEM "&Connect\tCtrl+K",        ID_SCOPE_CONNECT
+        MENUITEM "&Disconnect",             ID_SCOPE_DISCONNECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Start Acquisition\tF5",  ID_SCOPE_STARTACQ
+        MENUITEM "S&top Acquisition\tF6",   ID_SCOPE_STOPACQ
+        MENUITEM "S&ingle Shot",            ID_SCOPE_SINGLESHOT
+        MENUITEM SEPARATOR
+        POPUP "&Channel"
+        BEGIN
+            MENUITEM "CH&1",                ID_SCOPE_CH1
+            MENUITEM "CH&2",                ID_SCOPE_CH2
+            MENUITEM "CH&3",                ID_SCOPE_CH3
+            MENUITEM "CH&4",                ID_SCOPE_CH4
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                   ID_FILE_EXIT
+    END
+    POPUP "&Server"
+    BEGIN
+        MENUITEM "Start HTTP Server",       ID_SERVER_START
+        MENUITEM "Stop HTTP Server",        ID_SERVER_STOP
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",               ID_HELP_ABOUT
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Accelerator
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_F5, ID_SCOPE_STARTACQ, VIRTKEY, NOINVERT
+    VK_F6, ID_SCOPE_STOPACQ,  VIRTKEY, NOINVERT
+    "K",   ID_SCOPE_CONNECT,  VIRTKEY, CONTROL, NOINVERT
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// String Table
+
+STRINGTABLE
+BEGIN
+    ID_STATUSBAR_PANE_GPIB   "GPIB"
+    ID_STATUSBAR_PANE_FPS    "FPS"
+    ID_STATUSBAR_PANE_ACQ    "Acq"
+    ID_STATUSBAR_PANE_HTTP   "HTTP"
+    IDS_APP_TITLE   "TDS 520A GPIB Oscilloscope"
+    IDS_APP_VERSION "1.0.0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Connect Dialog
+
+IDD_CONNECT_DIALOG DIALOGEX 0, 0, 420, 294
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GPIB Connect"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    // Single horizontal row: [GPIB Board: edit spin] [Start addr: edit spin] [Scan]
+    LTEXT           "GPIB Board:",        IDC_STATIC,           8,  10, 48, 10
+    EDITTEXT                              IDC_EDIT_BOARD,      58,   8, 36, 14, ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",                   IDC_SPIN_BOARD,      "msctls_updown32", UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 94, 8, 12, 14
+
+    LTEXT           "Start addr:",        IDC_STATIC,         114,  10, 46, 10
+    EDITTEXT                              IDC_EDIT_START_ADDR, 162,  8, 36, 14, ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",                   IDC_SPIN_START_ADDR, "msctls_updown32", UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS, 198, 8, 12, 14
+
+    PUSHBUTTON      "&Scan",              IDC_BTN_SCAN,        220,  6, 50, 16
+
+    // Status label
+    LTEXT           "Ready.",             IDC_STATIC_STATUS,    8,  28, 280, 10
+
+    // Progress bar
+    CONTROL         "",                   IDC_PROGRESS_SCAN,  "msctls_progress32", PBS_SMOOTH, 8, 40, 404, 8
+
+    // Device list
+    LTEXT           "Found devices:",     IDC_STATIC,           8,  54, 80, 10
+    CONTROL         "",                   IDC_LIST_DEVICES,   "SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    8, 66, 404, 100
+
+    // Connect button
+    PUSHBUTTON      "C&onnect",           IDC_BTN_CONNECT,      8, 172, 60, 16
+
+    // Log
+    LTEXT           "Scan log:",          IDC_STATIC,           8, 196, 50, 10
+    EDITTEXT                              IDC_EDIT_LOG,         8, 208, 404, 60,
+                    ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL | WS_BORDER
+
+    // OK / Cancel
+    DEFPUSHBUTTON   "OK",                 IDOK,               300, 274, 50, 14
+    PUSHBUTTON      "Cancel",             IDCANCEL,           360, 274, 50, 14
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Scope Control Panel (child dialog, no title bar)
+
+IDD_SCOPE_CONTROLS DIALOGEX 0, 0, 225, 366
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    // ---- Status ----
+    LTEXT           "Not connected",      IDC_STATIC_CONN_STATUS,  6,  4, 213, 10
+
+    // ---- Channel ----
+    LTEXT           "Channel:",           IDC_STATIC,              6, 18,  46, 10
+    COMBOBOX                              IDC_COMBO_CHANNEL,      56, 16, 163, 60,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    // ---- Run / Stop / Single ----
+    PUSHBUTTON      "Run",                IDC_BTN_RUN,             6, 32,  66, 14
+    PUSHBUTTON      "Stop",               IDC_BTN_STOP,           78, 32,  66, 14
+    PUSHBUTTON      "Single",             IDC_BTN_SINGLE,        150, 32,  69, 14
+
+    // ---- Acquisition rate ----
+    GROUPBOX        "Acq / s",            IDC_STATIC,              4, 50, 217, 68
+    LTEXT           "Actual:",            IDC_STATIC,             10, 62,  46, 10
+    LTEXT           "---",                IDC_STATIC_ACQRATE,     60, 62, 151, 10
+    LTEXT           "Target:",            IDC_STATIC,             10, 76,  46, 10
+    EDITTEXT                              IDC_EDIT_ACQRATE,       60, 74,  60, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "(0=max)",            IDC_STATIC,            124, 76,  40, 10
+    PUSHBUTTON      "-",                  IDC_BTN_ACQRATE_DN,    168, 74,  26, 14
+    PUSHBUTTON      "+",                  IDC_BTN_ACQRATE_UP,    196, 74,  20, 14
+    LTEXT           "---",                IDC_STATIC_ACQRATE_TGT, 60, 90,  80, 10
+
+    // ---- Time/div ----
+    GROUPBOX        "Time / div",         IDC_STATIC,              4,122, 217, 36
+    LTEXT           "---",                IDC_STATIC_TIMEDIV,     10,134, 140, 12
+    PUSHBUTTON      "-",                  IDC_BTN_TIMEDIV_DN,    156,132,  28, 14
+    PUSHBUTTON      "+",                  IDC_BTN_TIMEDIV_UP,    186,132,  30, 14
+
+    // ---- Volts/div ----
+    GROUPBOX        "Volts / div",        IDC_STATIC,              4,162, 217, 36
+    LTEXT           "---",                IDC_STATIC_VOLTDIV,     10,174, 140, 12
+    PUSHBUTTON      "-",                  IDC_BTN_VOLTDIV_DN,    156,172,  28, 14
+    PUSHBUTTON      "+",                  IDC_BTN_VOLTDIV_UP,    186,172,  30, 14
+
+    // ---- Trigger ----
+    GROUPBOX        "Trigger level",      IDC_STATIC,              4,202, 217, 36
+    LTEXT           "0.00 V",             IDC_STATIC_TRIGLVL,     10,214, 140, 12
+    PUSHBUTTON      "-",                  IDC_BTN_TRIGLVL_DN,    156,212,  28, 14
+    PUSHBUTTON      "+",                  IDC_BTN_TRIGLVL_UP,    186,212,  30, 14
+
+    // ---- Measurements ----
+    GROUPBOX        "Measurements",       IDC_STATIC,              4,242, 217, 88
+    LTEXT           "Freq:",              IDC_STATIC,             10,254,  44, 10
+    LTEXT           "---",                IDC_STATIC_FREQ,        58,254, 157, 10
+    LTEXT           "Vmax:",              IDC_STATIC,             10,266,  44, 10
+    LTEXT           "---",                IDC_STATIC_VMAX,        58,266, 157, 10
+    LTEXT           "Vmin:",              IDC_STATIC,             10,278,  44, 10
+    LTEXT           "---",                IDC_STATIC_VMIN,        58,278, 157, 10
+    LTEXT           "Vpp:",               IDC_STATIC,             10,290,  44, 10
+    LTEXT           "---",                IDC_STATIC_VPP,         58,290, 157, 10
+    LTEXT           "RMS:",               IDC_STATIC,             10,302,  44, 10
+    LTEXT           "---",                IDC_STATIC_CURSOR_DT,   58,302, 157, 10
+
+    // ---- Cursors ----
+    GROUPBOX        "Cursors",            IDC_STATIC,              4,334, 217, 26
+    PUSHBUTTON      "Cursor On/Off",      IDC_BTN_CURSOR_TOGGLE,  10,344, 100, 12
+    LTEXT           "---",                IDC_STATIC_CURSOR_DV,  116,346,  99, 10
+END

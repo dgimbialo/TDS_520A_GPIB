@@ -1,0 +1,31 @@
+# Build output
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.idb
+*.ipdb
+*.iobj
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+ipch/
+*.VC.db
+*.VC.opendb
+
+# gpib_probe binaries
+gpib_probe/*.exe
+gpib_probe/*.obj
