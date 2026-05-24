@@ -17834,3 +17834,1092 @@
 2026-05-24 20:28:27.799 [DBG] [GPIB] Binary block read: 500 bytes
 2026-05-24 20:28:27.803 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
 2026-05-24 20:28:27.804 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:32.744 [INF] [App] TDS 520A Acquisition System starting...
+2026-05-24 20:43:32.748 [INF] [HTTP] HTTP server started on port 8080
+2026-05-24 20:43:32.770 [INF] [App] HTTP server: http://192.168.192.1:8080/
+2026-05-24 20:43:34.844 [DBG] [HTTP] New connection from 192.168.192.1:50195
+2026-05-24 20:43:34.846 [DBG] [WS] WebSocket upgraded on socket 984
+2026-05-24 20:43:39.880 [INF] [GPIB] Scanning GPIB board 17 for devices...
+2026-05-24 20:43:40.199 [INF] [GPIB] Board GPIB17 online (ibfind=31017, ibsic sent)
+2026-05-24 20:43:40.204 [INF] [GPIB] Opened device: board=17 addr=17 ud=31256
+2026-05-24 20:43:40.223 [INF] [GPIB] Found device at addr 17: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:43:40.224 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:43:40.282 [INF] [GPIB] Opened device: board=17 addr=18 ud=31256
+2026-05-24 20:43:42.712 [ERR] [GPIB] ibwrt failed cmd='*IDN?' iberr=14 - ibwrt: Bus error (EBUS)
+2026-05-24 20:43:42.713 [INF] [GPIB] Opened device: board=17 addr=17 ud=31257
+2026-05-24 20:43:42.714 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:43:42.772 [INF] [GPIB] Scan complete: 1 device(s) found
+2026-05-24 20:43:43.009 [INF] [Scope] Connected: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:43:43.021 [DBG] [Scope] Data encoding configured: RIBinary, width=1
+2026-05-24 20:43:45.306 [INF] [AcqThread] Started
+2026-05-24 20:43:45.307 [INF] [AcqThread] Thread started
+2026-05-24 20:43:45.317 [INF] [Scope] Acquisition started (continuous)
+2026-05-24 20:43:45.317 [INF] [AcqThread] Continuous acquisition resumed
+2026-05-24 20:43:45.320 [INF] [Scope] Active channel: CH1
+2026-05-24 20:43:46.504 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.02 YOFF=0 YZERO=0
+2026-05-24 20:43:46.504 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:43:46.539 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:46.544 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:46.544 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:46.844 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:46.848 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:46.849 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:47.181 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:47.185 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:47.185 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:47.689 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:47.693 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:47.693 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:48.196 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:48.200 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:48.200 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:48.694 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:48.698 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:48.699 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:49.194 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:49.198 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:49.198 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:49.697 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:49.701 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:49.701 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:50.191 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:50.195 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:50.195 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:50.691 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:50.695 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:50.696 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:51.189 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:51.193 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:51.193 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:51.517 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:51.521 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:51.521 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:51.829 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:51.833 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:51.833 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:52.138 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:52.141 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:52.142 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:52.593 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:52.597 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:52.597 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:52.909 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:52.913 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:52.913 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:53.222 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:53.225 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:53.226 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:53.547 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:53.551 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:53.551 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:53.862 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:53.866 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:53.866 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:54.168 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:54.172 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:54.173 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:54.489 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:54.493 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:54.493 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:54.809 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:54.813 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:54.814 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:55.123 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:55.126 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:55.126 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:55.449 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:55.453 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:55.454 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:55.762 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:55.766 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:55.767 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:56.071 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:56.075 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:56.075 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:56.522 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:56.525 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:56.525 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:56.840 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:56.845 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:56.845 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:57.144 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:57.149 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:57.149 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:57.480 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:57.483 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:57.484 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:57.792 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:57.796 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:57.797 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:58.101 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:58.105 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:58.105 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:58.555 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:58.559 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:58.559 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:58.859 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:58.863 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:58.863 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:43:59.177 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:59.180 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:59.181 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:59.630 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:59.634 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:59.634 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:43:59.949 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:43:59.953 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:43:59.953 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:00.252 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:00.256 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:00.256 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:00.705 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:00.709 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:00.709 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:01.012 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:01.016 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:01.016 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:01.323 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:01.326 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:01.327 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:01.658 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:01.662 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:01.662 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:01.967 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:01.970 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:01.971 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:02.270 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:02.273 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:02.273 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:02.726 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:02.730 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:02.731 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:03.044 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:03.048 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:03.049 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:03.497 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:03.500 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:03.501 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:03.809 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:03.813 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:03.813 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:04.116 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:04.121 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:04.121 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:04.420 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:04.424 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:04.424 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:04.758 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:04.762 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:04.762 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:05.074 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:05.078 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:05.078 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:05.377 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:05.381 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:05.381 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:05.713 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:05.717 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:05.718 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:06.019 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:06.022 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:06.023 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:06.321 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:06.325 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:06.325 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:06.776 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:06.780 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:06.780 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:07.093 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:07.097 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:07.097 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:07.405 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:07.409 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:07.409 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:07.867 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:07.871 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:07.871 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:08.168 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:08.172 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:08.173 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:08.623 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:08.627 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:08.627 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:08.938 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:08.942 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:08.942 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:09.243 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:09.247 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:09.247 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:09.707 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:09.710 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:09.711 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:10.012 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:10.016 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:10.016 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:10.314 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:10.318 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:10.318 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:10.638 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:10.642 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:10.642 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:10.957 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:10.961 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:10.961 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:11.271 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:11.275 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:11.275 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:11.604 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:11.608 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:11.608 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:11.915 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:11.919 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:11.920 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:12.219 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:12.222 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:12.223 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:12.672 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:12.675 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:12.676 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:12.991 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:12.995 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:12.995 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:13.295 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:13.298 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:13.299 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:13.637 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:13.641 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:13.641 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:13.948 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:13.952 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:13.952 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:14.249 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:14.253 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:14.253 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:14.705 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:14.709 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:14.709 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:15.629 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.02 YOFF=0 YZERO=0
+2026-05-24 20:44:15.629 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:15.664 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:15.666 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:15.667 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:15.956 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:15.960 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:15.960 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:16.402 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:16.406 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:16.406 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:16.739 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:16.743 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:16.743 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:17.038 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:17.042 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:17.043 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:17.343 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:17.347 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:17.348 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:17.689 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:17.693 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:17.693 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:17.997 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:18.001 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:18.001 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:18.301 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:18.304 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:18.305 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:18.752 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:18.756 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:18.756 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:19.072 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:19.075 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:19.076 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:19.374 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:19.378 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:19.378 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:19.708 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:19.712 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:19.712 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:20.013 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:20.018 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:20.018 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:20.318 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:20.322 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:20.322 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:20.773 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:20.778 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:20.778 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:21.091 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:21.095 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:21.096 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:21.405 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:21.409 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:21.409 [DBG] [Decoder] Decoded 500 samples. V=[-0.06..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:21.745 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:21.749 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:21.750 [DBG] [Decoder] Decoded 500 samples. V=[-0.06..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:22.045 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:22.049 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:22.049 [DBG] [Decoder] Decoded 500 samples. V=[-0.06..0.06] T=[-0.0005..0.000498]
+2026-05-24 20:44:22.889 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.04 YOFF=0 YZERO=0
+2026-05-24 20:44:22.889 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:22.927 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:22.931 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:22.931 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:23.254 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:23.258 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:23.258 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:23.600 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:23.604 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:23.604 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:23.922 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:23.926 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:23.926 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:24.222 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:24.226 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:24.227 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:24.548 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:24.552 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:24.552 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:24.853 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:24.857 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:24.857 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:25.155 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:25.159 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:25.160 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:25.488 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:25.491 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:25.492 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:25.797 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:25.801 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:25.801 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:26.099 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:26.103 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:26.103 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:26.554 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:26.558 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:26.559 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:26.857 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:26.861 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:26.861 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:27.172 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:27.176 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:27.176 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:27.508 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:27.512 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:27.513 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:27.811 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:27.816 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:27.816 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:28.116 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:28.121 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:28.121 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:28.573 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:28.577 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:28.577 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:28.887 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:28.891 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:28.891 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:29.198 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:29.202 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:29.203 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:29.526 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:29.530 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:29.531 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.04] T=[-0.0005..0.000498]
+2026-05-24 20:44:30.353 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.08 YOFF=0 YZERO=0
+2026-05-24 20:44:30.353 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:30.387 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:30.392 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:30.392 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:30.740 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:30.744 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:30.744 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:31.053 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:31.058 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:31.058 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:31.366 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:31.370 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:31.370 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:31.691 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:31.695 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:31.695 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:31.993 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:31.997 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:31.998 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:32.295 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:32.299 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:32.299 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:32.622 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:32.626 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:32.626 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:32.949 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:32.953 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:32.954 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:33.255 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:33.259 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:33.260 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:33.579 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:33.584 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:33.584 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:33.883 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:33.887 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:33.887 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:34.184 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:34.189 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:34.189 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:34.509 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:34.514 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:34.514 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:34.821 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:34.824 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:34.825 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:35.130 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:35.134 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:35.134 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:35.465 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:35.468 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:35.469 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:35.787 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:35.790 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:35.791 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0] T=[-0.0005..0.000498]
+2026-05-24 20:44:36.218 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:36.221 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:36.222 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:37.087 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.16 YOFF=0 YZERO=0
+2026-05-24 20:44:37.087 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:37.126 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:37.129 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:37.130 [DBG] [Decoder] Decoded 500 samples. V=[-0.16..0.16] T=[-0.0005..0.000498]
+2026-05-24 20:44:37.990 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.04 YOFF=0 YZERO=0
+2026-05-24 20:44:37.990 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:38.029 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:38.032 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:38.033 [DBG] [Decoder] Decoded 500 samples. V=[-0.08..0.08] T=[-0.0005..0.000498]
+2026-05-24 20:44:38.983 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.02 YOFF=0 YZERO=0
+2026-05-24 20:44:38.983 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:39.021 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:39.025 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:39.025 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:40.008 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.01 YOFF=0 YZERO=0
+2026-05-24 20:44:40.008 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:40.045 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:40.050 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:40.050 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:40.385 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:40.388 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:40.389 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:40.716 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:40.720 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:40.720 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:41.042 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:41.045 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:41.046 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:41.356 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:41.359 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:41.360 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:41.808 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:41.812 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:41.812 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:42.656 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.01 YOFF=0 YZERO=0
+2026-05-24 20:44:42.657 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:42.692 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:42.695 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:42.696 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:43.019 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:43.023 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:43.023 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.03] T=[-0.0005..0.000498]
+2026-05-24 20:44:43.342 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:43.345 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:43.346 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.03] T=[-0.0005..0.000498]
+2026-05-24 20:44:43.668 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:43.672 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:43.673 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:43.989 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:43.993 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:43.993 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:44.304 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:44.308 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:44.308 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:45.150 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.005 YOFF=0 YZERO=0
+2026-05-24 20:44:45.151 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:45.186 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:45.190 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:45.190 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:45.508 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:45.512 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:45.512 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:46.330 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.0025 YOFF=0 YZERO=0
+2026-05-24 20:44:46.331 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:46.368 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:46.372 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:46.372 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.01] T=[-0.0005..0.000498]
+2026-05-24 20:44:46.728 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:46.732 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:46.732 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:47.162 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:47.166 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:47.167 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:47.623 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:47.627 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:47.627 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.015] T=[-0.0005..0.000498]
+2026-05-24 20:44:47.932 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:47.935 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:47.936 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:48.233 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:48.236 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:48.237 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:48.560 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:48.564 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:48.565 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.0225] T=[-0.0005..0.000498]
+2026-05-24 20:44:48.865 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:48.869 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:48.869 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.0225] T=[-0.0005..0.000498]
+2026-05-24 20:44:49.295 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:49.299 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:49.299 [DBG] [Decoder] Decoded 500 samples. V=[-0.01..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:49.629 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:49.633 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:49.634 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:49.952 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:49.956 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:49.957 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:50.253 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:50.257 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:50.257 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:50.575 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:50.579 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:50.580 [DBG] [Decoder] Decoded 500 samples. V=[-0.0125..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:50.882 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:50.886 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:50.886 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:51.181 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:51.185 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:51.185 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:44:51.518 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:51.522 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:51.523 [DBG] [Decoder] Decoded 500 samples. V=[-0.005..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:51.827 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:51.831 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:51.831 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.015] T=[-0.0005..0.000498]
+2026-05-24 20:44:52.129 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:52.133 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:52.133 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.015] T=[-0.0005..0.000498]
+2026-05-24 20:44:52.585 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:52.589 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:52.589 [DBG] [Decoder] Decoded 500 samples. V=[-0.0075..0.0175] T=[-0.0005..0.000498]
+2026-05-24 20:44:53.441 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.000624 YOFF=0 YZERO=0
+2026-05-24 20:44:53.442 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:53.477 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:53.481 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:53.481 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.007488] T=[-0.0005..0.000498]
+2026-05-24 20:44:53.768 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:53.772 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:53.772 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:54.058 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:54.062 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:54.062 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:54.359 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:54.363 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:54.363 [DBG] [Decoder] Decoded 500 samples. V=[-0.001872..0.007488] T=[-0.0005..0.000498]
+2026-05-24 20:44:54.680 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:54.684 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:54.685 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:54.976 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:54.980 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:54.981 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:44:55.286 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:55.290 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:55.290 [DBG] [Decoder] Decoded 500 samples. V=[-0.003744..0.00936] T=[-0.0005..0.000498]
+2026-05-24 20:44:55.610 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:55.614 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:55.614 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:44:55.906 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:55.910 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:55.911 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:56.192 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:56.196 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:56.196 [DBG] [Decoder] Decoded 500 samples. V=[-0.003744..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:56.502 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:56.507 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:56.507 [DBG] [Decoder] Decoded 500 samples. V=[-0.000624..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:56.810 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:56.814 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:56.814 [DBG] [Decoder] Decoded 500 samples. V=[-0.001872..0.008112] T=[-0.0005..0.000498]
+2026-05-24 20:44:57.105 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:57.109 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:57.110 [DBG] [Decoder] Decoded 500 samples. V=[-0.004368..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:57.400 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:57.404 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:57.404 [DBG] [Decoder] Decoded 500 samples. V=[-0.001872..0.011232] T=[-0.0005..0.000498]
+2026-05-24 20:44:57.726 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:57.730 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:57.730 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.008736] T=[-0.0005..0.000498]
+2026-05-24 20:44:58.016 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:58.019 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:58.020 [DBG] [Decoder] Decoded 500 samples. V=[-0.001872..0.00936] T=[-0.0005..0.000498]
+2026-05-24 20:44:58.302 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:58.306 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:58.307 [DBG] [Decoder] Decoded 500 samples. V=[-0.001872..0.010608] T=[-0.0005..0.000498]
+2026-05-24 20:44:58.612 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:58.616 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:58.617 [DBG] [Decoder] Decoded 500 samples. V=[-0.002496..0.00936] T=[-0.0005..0.000498]
+2026-05-24 20:44:59.586 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.000624 YOFF=0 YZERO=0
+2026-05-24 20:44:59.587 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:44:59.625 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:44:59.629 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:44:59.629 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:00.087 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:00.090 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:00.091 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:00.377 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:00.381 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:00.382 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:00.698 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:00.702 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:00.703 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:00.988 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:00.992 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:00.992 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:01.297 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:01.301 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:01.301 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:01.626 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:01.630 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:01.630 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:01.920 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:01.924 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:01.924 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:02.210 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:02.214 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:02.214 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:02.519 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:02.523 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:02.523 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:02.825 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:02.829 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:02.830 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:03.120 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:03.124 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:03.124 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:03.415 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:03.418 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:03.419 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:03.730 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:03.734 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:03.734 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:04.018 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:04.022 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:04.022 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:04.307 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:04.311 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:04.311 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:04.629 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:04.633 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:04.633 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:04.929 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:04.933 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:04.933 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:05.223 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:05.227 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:05.228 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:05.547 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:05.551 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:05.552 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:05.841 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:05.844 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:05.845 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:06.141 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:06.145 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:06.145 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:06.453 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:06.457 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:06.457 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:06.757 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:06.761 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:06.761 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:07.059 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:07.063 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:07.063 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:07.886 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.000624 YOFF=0 YZERO=0
+2026-05-24 20:45:07.887 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:45:07.925 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:07.929 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:07.929 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:08.226 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:08.230 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:08.231 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:08.680 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:08.683 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:08.684 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:08.979 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:08.983 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:08.983 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:09.271 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:09.275 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:09.275 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:09.584 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:09.589 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:09.589 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:09.890 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:09.894 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:09.894 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:10.192 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:10.196 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:10.197 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:10.501 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:10.506 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:10.507 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:10.808 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:10.812 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:10.812 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:11.119 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:11.123 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:11.123 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:11.445 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:11.449 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:11.450 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:11.738 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:11.742 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:11.742 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:12.039 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:12.043 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:12.043 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:12.342 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:12.346 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:12.346 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:12.651 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:12.655 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:12.656 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:12.957 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:12.961 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:12.962 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:13.243 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:13.246 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:13.246 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:14.078 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.000624 YOFF=0 YZERO=0
+2026-05-24 20:45:14.078 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:45:14.116 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:14.120 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:14.121 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:14.461 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:14.465 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:14.465 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:14.760 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:14.764 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:14.764 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:15.054 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:15.058 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:15.059 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:15.355 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:15.359 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:15.359 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:15.681 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:15.685 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:15.685 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:15.972 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:15.976 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:15.976 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:16.276 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:16.279 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:16.280 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:16.586 [INF] [AcqThread] Stop requested
+2026-05-24 20:45:16.619 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:45:16.623 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:45:16.624 [DBG] [Decoder] Decoded 500 samples. V=[-0.001248..0.009984] T=[-0.0005..0.000498]
+2026-05-24 20:45:16.624 [INF] [AcqThread] Thread exited
+2026-05-24 20:46:45.803 [INF] [App] TDS 520A Acquisition System starting...
+2026-05-24 20:46:45.808 [INF] [HTTP] HTTP server started on port 8080
+2026-05-24 20:46:45.825 [INF] [App] HTTP server: http://192.168.192.1:8080/
+2026-05-24 20:46:47.220 [DBG] [HTTP] New connection from 192.168.192.1:50309
+2026-05-24 20:46:47.221 [DBG] [WS] WebSocket upgraded on socket 948
+2026-05-24 20:46:58.335 [INF] [GPIB] Scanning GPIB board 17 for devices...
+2026-05-24 20:46:58.646 [INF] [GPIB] Board GPIB17 online (ibfind=31017, ibsic sent)
+2026-05-24 20:46:58.651 [INF] [GPIB] Opened device: board=17 addr=17 ud=31256
+2026-05-24 20:46:58.669 [INF] [GPIB] Found device at addr 17: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:46:58.670 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:46:58.729 [INF] [GPIB] Opened device: board=17 addr=18 ud=31256
+2026-05-24 20:47:01.158 [ERR] [GPIB] ibwrt failed cmd='*IDN?' iberr=14 - ibwrt: Bus error (EBUS)
+2026-05-24 20:47:01.159 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:47:01.223 [INF] [GPIB] Opened device: board=17 addr=19 ud=31256
+2026-05-24 20:47:03.652 [ERR] [GPIB] ibwrt failed cmd='*IDN?' iberr=14 - ibwrt: Bus error (EBUS)
+2026-05-24 20:47:03.653 [INF] [GPIB] Opened device: board=17 addr=17 ud=31257
+2026-05-24 20:47:03.653 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:47:03.709 [INF] [GPIB] Scan complete: 1 device(s) found
+2026-05-24 20:47:03.947 [INF] [Scope] Connected: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:47:03.957 [DBG] [Scope] Data encoding configured: RIBinary, width=1
+2026-05-24 20:47:07.638 [INF] [AcqThread] Started
+2026-05-24 20:47:07.639 [INF] [AcqThread] Thread started
+2026-05-24 20:47:07.649 [INF] [Scope] Acquisition started (continuous)
+2026-05-24 20:47:07.649 [INF] [AcqThread] Continuous acquisition resumed
+2026-05-24 20:47:07.652 [INF] [Scope] Active channel: CH1
+2026-05-24 20:47:08.692 [DBG] [WfmPre] Parsed: NR_PT=500 XINCR=2e-06 YMULT=0.02 YOFF=0 YZERO=0
+2026-05-24 20:47:08.692 [DBG] [Scope] Preamble refreshed from scope
+2026-05-24 20:47:08.731 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:08.734 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:08.735 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:09.023 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:09.027 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:09.027 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:09.376 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:09.379 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:09.380 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:09.880 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:09.884 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:09.884 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:10.390 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:10.395 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:10.395 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:10.888 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:10.892 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:10.892 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:11.403 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:11.407 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:11.407 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:11.917 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:11.921 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:11.921 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:12.229 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:12.233 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:12.234 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:12.562 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:12.567 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:12.567 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:12.873 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:12.877 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:12.878 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:13.187 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:13.191 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:13.191 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:13.510 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:13.514 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:13.515 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:13.830 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:13.834 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:13.834 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:14.146 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:14.151 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:14.151 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:14.502 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:14.506 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:14.506 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:14.811 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:14.814 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:14.815 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:15.113 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:15.117 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:15.117 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:15.570 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:15.574 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:15.574 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:15.886 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:15.891 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:15.891 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:16.319 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:16.322 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:16.323 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:16.656 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:16.659 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:16.660 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:16.961 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:16.965 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:16.965 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:17.263 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:17.267 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:17.268 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:17.715 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:17.719 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:17.720 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:18.036 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:18.040 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:18.040 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:18.346 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:18.350 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:18.351 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:18.674 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:18.678 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:18.679 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:18.980 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:18.984 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:18.984 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:19.282 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:19.286 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:19.286 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:19.617 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:19.621 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:19.622 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:19.937 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:19.941 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:19.941 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:20.378 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:20.382 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:20.383 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:20.710 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:20.713 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:20.714 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:21.024 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:21.028 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:21.028 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:21.342 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:21.345 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:21.346 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:21.676 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:21.680 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:21.681 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:21.982 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:21.985 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:21.986 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:22.423 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:22.427 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:22.427 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:22.755 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:22.759 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:22.759 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:23.069 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:23.073 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:23.074 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:23.524 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:23.527 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:23.528 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:23.829 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:23.833 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:23.834 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:24.264 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:24.268 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:24.268 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:24.599 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:24.603 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:24.603 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:24.904 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:24.908 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:24.908 [DBG] [Decoder] Decoded 500 samples. V=[-0.04..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:25.218 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:25.222 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:25.223 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:25.557 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:25.562 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:25.562 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:25.877 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:25.881 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:25.881 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:26.209 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:26.214 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:26.214 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:26.538 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:26.542 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:26.542 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:26.844 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:26.847 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:26.847 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:27.146 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:27.150 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:27.150 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:27.601 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:27.605 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:27.605 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:27.920 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:27.923 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:27.924 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:28.244 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:28.248 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:28.248 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:28.585 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:28.589 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:28.589 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:28.898 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:28.902 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:28.903 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:29.203 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:29.207 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:29.207 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:29.540 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:29.544 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:29.544 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:29.853 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:29.857 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:29.858 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:30.160 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:30.163 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:30.163 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:30.484 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:30.488 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:30.488 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:30.804 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:30.808 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:30.808 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:31.235 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:31.240 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:31.240 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:31.559 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:31.563 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:31.563 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:31.873 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:31.877 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:31.877 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:32.178 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:32.181 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:32.182 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:32.501 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:32.505 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:32.505 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:32.808 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:32.811 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:32.811 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:33.110 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:33.113 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:33.114 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:33.564 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:33.568 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:33.568 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:33.879 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:33.883 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:33.883 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:34.185 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:34.189 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:34.189 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:34.508 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:34.512 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:34.512 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:34.827 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:34.831 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:34.831 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:35.144 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:35.148 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:35.148 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:35.491 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:35.495 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:35.495 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:35.808 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:35.811 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:35.812 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:36.111 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:36.114 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:36.114 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0] T=[-0.0005..0.000498]
+2026-05-24 20:47:36.567 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:36.571 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:36.571 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:36.883 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:36.887 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:36.888 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:37.186 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:37.190 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:37.190 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:37.493 [INF] [AcqThread] Stop requested
+2026-05-24 20:47:37.518 [DBG] [GPIB] Binary block read: 500 bytes
+2026-05-24 20:47:37.522 [DBG] [Scope] Waveform fetched: 500 samples, channel CH1
+2026-05-24 20:47:37.522 [DBG] [Decoder] Decoded 500 samples. V=[-0.02..0.02] T=[-0.0005..0.000498]
+2026-05-24 20:47:37.523 [INF] [AcqThread] Thread exited
+2026-05-24 20:47:37.555 [INF] [Scope] Acquisition stopped
+2026-05-24 20:47:41.583 [INF] [AcqThread] Stop requested
+2026-05-24 20:47:41.584 [INF] [GPIB] Closed device ud=31257
+2026-05-24 20:47:41.584 [INF] [Scope] Disconnected
+2026-05-24 20:47:46.515 [INF] [GPIB] Scanning GPIB board 17 for devices...
+2026-05-24 20:47:46.717 [INF] [GPIB] Board GPIB17 online (ibfind=31017, ibsic sent)
+2026-05-24 20:47:46.726 [INF] [GPIB] Opened device: board=17 addr=17 ud=31256
+2026-05-24 20:47:46.744 [INF] [GPIB] Found device at addr 17: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:47:46.745 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:47:46.801 [INF] [GPIB] Opened device: board=17 addr=18 ud=31256
+2026-05-24 20:47:49.231 [ERR] [GPIB] ibwrt failed cmd='*IDN?' iberr=14 - ibwrt: Bus error (EBUS)
+2026-05-24 20:47:49.232 [INF] [GPIB] Opened device: board=17 addr=17 ud=31257
+2026-05-24 20:47:49.232 [INF] [GPIB] Closed device ud=31256
+2026-05-24 20:47:49.284 [INF] [GPIB] Scan complete: 1 device(s) found
+2026-05-24 20:47:49.520 [INF] [Scope] Connected: TEKTRONIX,TDS 520A,0,CF:91.1CT FV:v3.8.7e
+2026-05-24 20:47:49.530 [DBG] [Scope] Data encoding configured: RIBinary, width=1

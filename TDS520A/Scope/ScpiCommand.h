@@ -21,7 +21,7 @@ namespace Scpi
     inline std::string DataSourceQuery()   { return "DATA:SOURCE?"; }
     inline std::string DataEncdg()         { return "DATA:ENCDG RIBinary"; } // Signed binary
     inline std::string DataWidth(int w)    { return "DATA:WIDTH " + std::to_string(w); } // 1 or 2 bytes
-    inline std::string DataStartStop(int nrPt = 500) // clamp to actual record length
+    inline std::string DataStartStop(int nrPt = 250) // clamp to actual record length
     {
         char buf[64];
         sprintf_s(buf, "DATA:START 1;DATA:STOP %d", nrPt > 0 ? nrPt : 500);

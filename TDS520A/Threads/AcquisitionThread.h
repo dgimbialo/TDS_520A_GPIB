@@ -117,7 +117,7 @@ private:
     std::mutex                m_cmdMutex;
     std::queue<ScopeCommand>  m_cmdQueue;
 
-    std::atomic<uint32_t>     m_targetIntervalMs{ 500 };
+    std::atomic<uint32_t>     m_targetIntervalMs{ 0 };  // 0 = run flat out
 
     AcqCallback               m_callback;
 

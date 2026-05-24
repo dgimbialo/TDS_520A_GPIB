@@ -156,71 +156,66 @@ bool TektronixScope::FetchWaveform(WaveformBuffer& outBuf, GpibError& err)
     auto* dev = m_controller.GetDevice();
     if (!dev) { err.message = L"Not connected"; return false; }
 
-    // 1. Stop acquisition first so the waveform buffer is frozen for BOTH
-    //    WFMPRE? and CURVE?.  While the scope is running it may be mid-acquisition
-    //    when WFMPRE? arrives, causing a slow or missed response.  The safe
-    //    sequence for a single complete capture is:
-    //       STOP ? WFMPRE? ? CURVE? ? ibrd (instant) ? RUN
-    if (!dev->Write(Scpi::AcqState(false), err))
-    {
-        LOG_ERR("Scope", L"ACQuire:STATE STOP failed");
-        return false;
-    }
+    // --- Fast continuous path ---
+    // TDS 520A in SAMple+RUNStop mode continuously updates its waveform buffer.
+    // We do NOT stop/restart the scope on every cycle — that costs 2 extra GPIB
+    // round-trips (~100-200 ms) and limits us to ~2 Hz.
+    //
+    // Instead we read CURVE? while the scope is running.  The worst case is a
+    // single glitch frame if a trigger fires mid-transfer, which is acceptable
+    // for a live display.  If a clean single-shot capture is needed, use
+    // AcquireSingle() which arms proper single-sequence mode.
+    //
+    // Sequence per cycle (scope already running):
+    //   CURVE? ? ibrd binary block          ? only 1 round-trip!
 
-    // 2. Request preamble — skipped when cache is valid (settings unchanged).
-    //    Invalidated automatically by SetChannel / SetHorizontalScale / SetChannelScale.
+    // 1. Refresh preamble only when settings changed (channel / scale / etc.)
     if (!m_preambleValid)
     {
+        // Brief stop while reading preamble so the format fields are stable
+        if (!dev->Write(Scpi::AcqState(false), err))
+        {
+            LOG_ERR("Scope", L"STOP for preamble refresh failed");
+            return false;
+        }
         std::string preambleStr;
-        if (!dev->Query(Scpi::WfmPre(), preambleStr, err))
+        bool ok = dev->Query(Scpi::WfmPre(), preambleStr, err);
+        // Always re-arm regardless of query result
+        GpibError restartErr;
+        dev->Write(Scpi::AcqState(true), restartErr);
+        if (!ok)
         {
             LOG_ERR("Scope", L"WFMPRE? failed");
-            GpibError restartErr;
-            dev->Write(Scpi::AcqState(true), restartErr);
             return false;
         }
         if (!m_preambleCache.Parse(preambleStr))
         {
             err.message = L"Failed to parse waveform preamble";
             LOG_ERR("Scope", L"Preamble parse failed: %S", preambleStr.c_str());
-            GpibError restartErr;
-            dev->Write(Scpi::AcqState(true), restartErr);
             return false;
         }
         m_preambleValid = true;
         LOG_DBG("Scope", L"Preamble refreshed from scope");
     }
 
-    // 3. Copy cached preamble into output buffer
+    // 2. Copy cached preamble into output buffer
     outBuf.Preamble = m_preambleCache;
 
-    // 4. Request and read curve data (scope is already stopped)
+    // 3. Request curve data — scope keeps running, no STOP needed
     if (!dev->Write(Scpi::Curve(), err))
     {
         LOG_ERR("Scope", L"CURVE? write failed");
-        GpibError restartErr;
-        dev->Write(Scpi::AcqState(true), restartErr);
         return false;
     }
 
     if (!dev->ReadBinaryBlock(outBuf.RawData, err))
     {
         LOG_ERR("Scope", L"Binary block read failed");
-        // Device Clear resets the scope's parser and flushes the GPIB bus —
-        // much more reliable than a drain loop after a timeout.
+        // Device Clear flushes the GPIB bus after a timeout
         GpibError clrErr;
         dev->Clear(clrErr);
-        ::Sleep(100);
-        // Re-arm continuous acquisition so the next cycle can proceed normally.
-        GpibError restartErr;
-        dev->Write(Scpi::AcqState(true), restartErr);
+        ::Sleep(50);
         return false;
-    }
-
-    // 5. Re-arm continuous acquisition for the next cycle
-    {
-        GpibError restartErr;
-        dev->Write(Scpi::AcqState(true), restartErr);
     }
 
     outBuf.Channel   = m_channel;
