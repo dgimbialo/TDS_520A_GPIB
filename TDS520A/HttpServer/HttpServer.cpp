@@ -26,10 +26,20 @@ bool HttpServer::Start()
 
     NetworkUtils::SetReuseAddr(m_listenSock, true);
 
+    std::string bindAddress = m_bindAddress.empty()
+        ? NetworkUtils::GetPreferredLocalIPv4Address()
+        : m_bindAddress;
+
     sockaddr_in addr{};
-    addr.sin_family      = AF_INET;
-    addr.sin_addr.s_addr = INADDR_ANY;
-    addr.sin_port        = ::htons(m_port);
+    addr.sin_family = AF_INET;
+    addr.sin_port   = ::htons(m_port);
+
+    if (::inet_pton(AF_INET, bindAddress.c_str(), &addr.sin_addr) != 1)
+    {
+        addr.sin_addr.s_addr = INADDR_ANY;
+        LOG_WRN("HTTP", L"Preferred bind address %S is invalid, falling back to INADDR_ANY",
+            StringUtils::Utf8ToWide(bindAddress).c_str());
+    }
 
     if (::bind(m_listenSock, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) != 0)
     {
@@ -285,7 +295,7 @@ void HttpServer::ProcessWsCommand(const std::string& json)
     else if (cmd == "single") wc.type = WebCommand::Type::Single;
     else return;
 
-    // Enqueue – never blocks the WS thread
+    // Enqueue ï¿½ never blocks the WS thread
     {
         std::lock_guard<std::mutex> lock(m_cmdQueueMutex);
         m_cmdQueue.push(wc);
@@ -314,7 +324,7 @@ void HttpServer::CommandDispatchLoop()
 // ?? Called from acquisition thread: store latest wave, wake broadcast loop ??
 void HttpServer::PostWaveform(const DecodedWaveform& wave)
 {
-    // Update cached status fields from the waveform itself — no scope calls needed.
+    // Update cached status fields from the waveform itself ï¿½ no scope calls needed.
     {
         std::lock_guard<std::mutex> sl(m_statusMutex);
         m_cachedChannel     = wave.Channel;

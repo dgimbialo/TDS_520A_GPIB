@@ -7,6 +7,10 @@ namespace NetworkUtils
     // Returns all local IPv4 addresses (excluding loopback)
     std::vector<std::string> GetLocalIPv4Addresses();
 
+    // Returns the preferred local IPv4 address for the web server.
+    // Prefers 192.168.0.* / 192.168.1.* and falls back to any non-loopback address.
+    std::string GetPreferredLocalIPv4Address();
+
     // Returns first non-loopback IPv4 as string, or "127.0.0.1"
     std::string GetPrimaryLocalIP();
 

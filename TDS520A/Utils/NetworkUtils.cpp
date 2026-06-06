@@ -53,11 +53,29 @@ std::vector<std::string> GetLocalIPv4Addresses()
     return result;
 }
 
+std::string GetPreferredLocalIPv4Address()
+{
+    const auto ips = GetLocalIPv4Addresses();
+
+    const auto isPreferredLocal = [](const std::string& ip)
+    {
+        return ip.rfind("192.168.0.", 0) == 0 ||
+               ip.rfind("192.168.1.", 0) == 0;
+    };
+
+    const auto it = std::find_if(ips.begin(), ips.end(), isPreferredLocal);
+    if (it != ips.end())
+        return *it;
+
+    if (!ips.empty())
+        return ips.front();
+
+    return "127.0.0.1";
+}
+
 std::string GetPrimaryLocalIP()
 {
-    auto ips = GetLocalIPv4Addresses();
-    if (!ips.empty()) return ips[0];
-    return "127.0.0.1";
+    return GetPreferredLocalIPv4Address();
 }
 
 bool SetNonBlocking(SOCKET s, bool nonBlocking)
@@ -91,7 +109,7 @@ bool SendAll(SOCKET s, const char* data, int len)
             int err = ::WSAGetLastError();
             if (err == WSAEWOULDBLOCK)
             {
-                // Socket temporarily full – back off briefly and retry
+                // Socket temporarily full ï¿½ back off briefly and retry
                 ::Sleep(1);
                 continue;
             }

@@ -66,6 +66,10 @@ BOOL CTds520AApp::InitInstance()
         m_httpServer.PostWaveform(wave);
     });
 
+    // Detect the best local IPv4 address before starting the web server.
+    const std::string preferredIp = NetworkUtils::GetPreferredLocalIPv4Address();
+    m_httpServer.SetBindAddress(preferredIp);
+
     // Start HTTP server
     if (!m_httpServer.Start())
     {
@@ -73,8 +77,8 @@ BOOL CTds520AApp::InitInstance()
     }
     else
     {
-        std::string ip = NetworkUtils::GetPrimaryLocalIP();
-        LOG_INF("App", L"HTTP server: http://%S:8080/", ip.c_str());
+        LOG_INF("App", L"Selected local IP for HTTP server: %S", StringUtils::Utf8ToWide(preferredIp).c_str());
+        LOG_INF("App", L"HTTP server: http://%S:8080/", StringUtils::Utf8ToWide(preferredIp).c_str());
     }
 
     // Create main window
@@ -166,7 +170,7 @@ bool CTds520AApp::ConnectScope(int board, int addr)
 
 void CTds520AApp::SyncSettingsFromScope()
 {
-    // Called from the connect background thread — GPIB is free here.
+    // Called from the connect background thread ï¿½ GPIB is free here.
     // Read the scope's current horizontal and vertical settings so the
     // control panel and renderer show correct values from the first frame.
     GpibError err;

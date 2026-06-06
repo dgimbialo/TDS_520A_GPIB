@@ -27,6 +27,7 @@ public:
 
     // Configure before starting
     void SetPort(uint16_t port) { m_port = port; }
+    void SetBindAddress(const std::string& address) { m_bindAddress = address; }
     void SetScope(TektronixScope* scope) { m_scope = scope; }
     void SetCommandCallback(WebCommandCallback cb) { m_cmdCallback = std::move(cb); }
 
@@ -38,7 +39,7 @@ public:
     uint16_t GetPort() const { return m_port; }
 
     // Called from acquisition thread: stores latest waveform in shared slot.
-    // Returns immediately – no socket I/O on the caller's thread.
+    // Returns immediately ï¿½ no socket I/O on the caller's thread.
     void PostWaveform(const DecodedWaveform& wave);
 
     // Called once after scope connects to cache the IDN string for status JSON.
@@ -68,11 +69,12 @@ private:
     void CommandDispatchLoop();                        // dedicated command thread
 
     uint16_t             m_port{ 8080 };
+    std::string          m_bindAddress;
     SOCKET               m_listenSock{ INVALID_SOCKET };
     std::atomic<bool>    m_running{ false };
     std::thread          m_acceptThread;
 
-    // Active WebSocket connections – only held briefly to snapshot the list
+    // Active WebSocket connections ï¿½ only held briefly to snapshot the list
     mutable std::mutex   m_wsMutex;
     std::vector<std::shared_ptr<WebSocketConnection>> m_wsClients;
 
@@ -84,7 +86,7 @@ private:
     std::string          m_latestWaveJson;
     bool                 m_hasWave{ false };
 
-    // Cached status – updated from BroadcastWaveform (no GPIB calls in HTTP threads)
+    // Cached status ï¿½ updated from BroadcastWaveform (no GPIB calls in HTTP threads)
     std::mutex           m_statusMutex;
     std::string          m_cachedIdn;
     ScopeChannel         m_cachedChannel{ ScopeChannel::CH1 };
@@ -93,13 +95,13 @@ private:
     uint32_t             m_cachedAcqRate{ 0 };
     bool                 m_cachedConnected{ false };
 
-    // Command queue – WS threads enqueue; CommandDispatchLoop dequeues and executes
+    // Command queue ï¿½ WS threads enqueue; CommandDispatchLoop dequeues and executes
     std::mutex              m_cmdQueueMutex;
     std::condition_variable m_cmdQueueCv;
     std::queue<WebCommand>  m_cmdQueue;
     std::thread             m_cmdThread;
 
-    // Pending waveform slot – written by PostWaveform, read by BroadcastLoop
+    // Pending waveform slot ï¿½ written by PostWaveform, read by BroadcastLoop
     std::mutex              m_pendingMutex;
     std::condition_variable m_pendingCv;
     DecodedWaveform         m_pendingWave;
